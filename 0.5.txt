@@ -1,0 +1,22 @@
+user-> browser:
+note left of browser
+user writes the adress in the adress bar
+https://fullstack-exampleapp.herokuapp.com/spa
+end note
+
+browser->server: GET https://fullstack-exampleapp.herokuapp.com/data.json
+server->browser: status 304, data.json
+
+browser->server: GET https://fullstack-exampleapp.herokuapp.com/main.js
+server->browser: status 304, main.js
+
+browser->server: GET https://fullstack-exampleapp.herokuapp.com/spa
+note left of server
+  HTML is generated in the browser
+end note
+server->browser: status 304, page HTML code
+
+note left of browser
+ the browser displays the HTML returned by the server.
+
+end note

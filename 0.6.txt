@@ -1,0 +1,24 @@
+user-> browser:
+note left of browser
+user writes the adress in the adress bar
+https://fullstack-exampleapp.herokuapp.com/spa
+user adds a new note and clicks on save
+end note
+browser->server: POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+server->browser: 201
+browser->server: GET https://fullstack-exampleapp.herokuapp.com/data.json
+server->browser: status 304, data.json
+
+browser->server: GET https://fullstack-exampleapp.herokuapp.com/spa.js
+server->browser: status 304, spa.js
+
+browser->server: GET https://fullstack-exampleapp.herokuapp.com/spa
+note left of server
+  HTML is generated in the browser with the new added note
+end note
+server->browser: status 304, page HTML code
+
+note left of browser
+ the browser displays the updated HTML returned by the server.
+
+end note
